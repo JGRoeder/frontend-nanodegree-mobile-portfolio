@@ -1,0 +1,49 @@
+Portfolio Index: 
+
+Utilized Gulpjs via Node.js for task automation including packages included: 
+
+gulp-imagemin
+gulp-cssmin
+gulp-htmlmin
+gulp-inline
+gulp-minify-inline
+gulp-uglify
+
+Minification, inline css includes, image processing. 
+- scaled images to appropriate sizes
+- posterized ( color depth reduction ) where applicable
+- in general followed any other pagespeed insights other recommendations
+
+Some of my reference doc: 
+
+http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
+
+http://yeoman.io/blog/performance-optimization.html
+
+http://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css
+
+http://wesleyhales.com/blog/2013/10/26/Jank-Busting-Apples-Home-Page/
+
+http://updates.html5rocks.com/2013/02/Profiling-Long-Paint-Times-with-DevTools-Continuous-Painting-Mode
+
+http://www.html5rocks.com/en/tutorials/speed/animations/
+
+Many many more. 
+
+For 60FPS 
+
+- Moved dom queries out of loops where applicable.
+- Switch for loops to store value ( cached versions )
+- Removed string.prototype.capitalize & replaced its functionality with css text-transform rule ( Which I only guessed is more performant, I did not qualify that with research, shame on me )
+- De-nested a few functions ( negligable difference, but why not )
+- Debounced the scroll event. 
+- Switched animation to transform: translateX property 
+- Calcute # of pizzas based on screen.availwidth/height 
+- Added translate3d to ensure acceleration on elements**
+
+** this also adds elements to their own composite layers, backface-visibility seems to 
+trigger acceleration behavior as well. I cannot tell whether or not the additional composite
+layers are helping or hindering performance. They certainly have the ability to do either. 
+I'm also unsure whether or not backface-visiblity property should trigger acceleration without
+a 3d transform being present. So I opted for translate3d, which seemed less likely to change. 
+ 
