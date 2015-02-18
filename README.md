@@ -42,6 +42,7 @@ Images were also posterized by hand where applicable, to manually reduce color d
 - Switched for loops to stored value ( cached versions ) where applicable
 - Switched animation from operating on left to more performant translateX property
 - Switched # of moving pizzas from a static value to one calculated based on availwidth & availheight ( reduces overall count )
+- Replaced querySelector & querySelectorAll with thie more performant counterparts where applicable.
 - added translate3d property to moving pizza elements to force 3d acceleration **
 
 *<sub>**also adds elements to their own composite layers. backface-visibility seems to trigger acceleration as well. Depending on whether or not the additional composite layers are helping or hindering performance, that might be a better alternative.</sub>*
