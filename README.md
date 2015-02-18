@@ -45,4 +45,4 @@ Images were also posterized by hand where applicable, to manually reduce color d
 - Replaced querySelector & querySelectorAll with thie more performant counterparts where applicable.
 - added translate3d property to moving pizza elements to force 3d acceleration **
 
-*<sub>**also adds elements to their own composite layers. backface-visibility seems to trigger acceleration as well. Depending on whether or not the additional composite layers are helping or hindering performance, that might be a better alternative.</sub>*
+*<sub> **also adds elements to their own composite layers. backface-visibility seems to trigger acceleration as well. Depending on whether or not the additional composite layers are helping or hindering performance, that might be a better alternative.</sub>*
