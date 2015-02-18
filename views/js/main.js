@@ -291,7 +291,6 @@ function generator(adj, noun) {
   var nouns = getNoun(noun);
   var randomAdjective = parseInt(Math.random() * adjectives.length);
   var randomNoun = parseInt(Math.random() * nouns.length);
-  //capitalization moved to style.css text-decoration
   var name = "The " + adjectives[randomAdjective] + " " + nouns[randomNoun];
   return name;
 }
@@ -418,26 +417,26 @@ function changeSliderLabel(size) {
   }
 }
 
+// TODO: change to 3 sizes? no more xl?
+// Changes the slider value to a percent width
+function sizeSwitcher (size) {
+  switch(size) {
+    case "1":
+      return 0.25;
+    case "2":
+      return 0.3333;
+    case "3":
+      return 0.5;
+    default:
+      console.log("bug in sizeSwitcher");
+  }
+}
+
 // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
 function determineDx (elem, size) {
   var oldwidth = elem.offsetWidth;
   var windowwidth = document.querySelector("#randomPizzas").offsetWidth;
   var oldsize = oldwidth / windowwidth;
-
-  // TODO: change to 3 sizes? no more xl?
-  // Changes the slider value to a percent width
-  function sizeSwitcher (size) {
-    switch(size) {
-      case "1":
-        return 0.25;
-      case "2":
-        return 0.3333;
-      case "3":
-        return 0.5;
-      default:
-        console.log("bug in sizeSwitcher");
-    }
-  }
 
   var newsize = sizeSwitcher(size);
   var dx = (newsize - oldsize) * windowwidth;
